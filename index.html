@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cipher Decoder</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eef2f7; padding: 40px; }
+    .container { background: white; width: 650px; margin: auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+    textarea { width: 100%; height: 120px; padding: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; }
+    select, button, input { padding: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #bbb; }
+    button { background: #4a6cf7; color: white; cursor: pointer; margin-top: 12px; }
+    button:hover { background: #3d5ae0; }
+    #output { margin-top: 20px; padding: 12px; background: #f0f0f0; border-radius: 8px; min-height: 60px; white-space: pre-wrap; }
+    .flex { display: flex; gap: 10px; margin-top: 15px; }
+    #keyBox { display:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Cipher Decoder</h2>
+
+    <label for="inputText">Enter text:</label>
+    <textarea id="inputText"></textarea>
+
+    <div class="flex">
+      <select id="cipherSelect">
+        <option value="caesar">Caesar Cipher</option>
+        <option value="substitution">Substitution Cipher</option>
+        <option value="railfence">Rail Fence Cipher</option>
+        <option value="vigenere">Vigenère Cipher</option>
+      </select>
+
+      <button id="decodeBtn" onclick="handleDecode()">Decode</button>
+    </div>
+
+    <div id="keyBox" style="margin-top:15px;">
+      <label id="keyLabel"></label>
+      <input type="text" id="keyInput" style="width:100%; margin-top:5px;" />
+    </div>
+
+    <h3>Output:</h3>
+    <div id="output"></div>
+  </div>
+
+  <script src="js/caesar.js"></script>
+  <script src="js/substitution.js"></script>
+  <script src="js/railfence.js"></script>
+  <script src="js/vigenere.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
